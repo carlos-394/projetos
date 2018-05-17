@@ -1,0 +1,48 @@
+<h2>Filmes</h2>
+
+<ul class="movies">
+	<li *ngFor="let movie of moviess" [class.selected]="movie === selectedMovie" (click)="onSelect(movie)">
+		<span class="badge">{{movie.id}}</span> {{movie.nome}}
+	</li>
+</ul>
+
+<div *ngIf="selectedMovie" class="row">
+ 
+  <h2>{{ selectedMovie.nome | uppercase }} Detalhe</h2>
+  <div class="media">
+  	<img class="align-self-center mr-3" src="{{selectedMovie.foto}}" height="64" width="64" alt="Generic placholder image">
+  	<div class="media-body">
+  		<h5 class="mt-0">{{selectedMovie.nome}}</h5>
+  		<p>{{selectedMovie.descricao}}</p>
+  		<p class="mb-0">{{selectedMovie.id}}</p>
+  	</div>
+  </div>
+</div>  
+
+
+
+
+
+
+<!--
+
+  <div class="media">
+  	
+  	<div class="media-body">
+     <div><span>id: </span></div>
+       <div>
+        <label>nome:<br>
+          
+        </label>
+       <label>Sinopse:
+    	  
+       </label>
+    <label>Foto:
+    	 <img src="{{selectedMovie.foto}}">
+    </label> 
+       </div>
+    </div>
+</div>
+ 
+</div>
+-->
